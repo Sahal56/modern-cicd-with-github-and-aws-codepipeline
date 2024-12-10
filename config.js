@@ -4,8 +4,8 @@ var config = {
 };
 
 // Set region and other config properties from environment variables
-config.infra.region = process.env.AWS_REGION || "us-west-2";
-config.app.hotel_name = process.env.HOTEL_NAME || "Hotel Yorba";
+config.infra.region = process.env.AWS_REGION || "us-east-1";
+config.app.hotel_name = process.env.HOTEL_NAME || "Pathan Hotel";
 config.infra.dynamodb_table = process.env.DYNAMODB_TABLE_NAME || "Rooms";
 
 console.debug("Configuration loaded with the following settings:");
