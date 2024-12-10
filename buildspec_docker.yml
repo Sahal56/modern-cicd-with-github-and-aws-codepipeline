@@ -19,6 +19,9 @@ phases:
       - export repository_name="hotel-app"  # Set your repository name here
       - echo "Logging into Amazon ECR..."
       - aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
+      - echo "Creating repository in AWS ECR"
+      - aws ecr create-repository --repository-name $repository_name --region $AWS_REGION
+      # extra step for creating repo in ECR added by github.com/sahal56
 
   build:
     commands:
